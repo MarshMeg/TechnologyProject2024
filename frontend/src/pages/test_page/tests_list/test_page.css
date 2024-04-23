@@ -1,0 +1,36 @@
+#tests {
+  .tests {
+    .test {
+      margin-bottom: 15px;
+    }
+  }
+
+  div.pages {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    visibility: hidden;
+
+    .active {
+      visibility: visible;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+
+      img {
+        height: 30px;
+      }
+    }
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .pages {
+      img {
+        filter: invert(1);
+      }
+    }
+  }
+}

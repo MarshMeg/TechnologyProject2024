@@ -1,0 +1,50 @@
+#edit_test {
+  #form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    #editor {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      #title {
+        width: 100%;
+        margin-bottom: 0.5rem;
+
+        input {
+          width: calc(100% - 87px);
+        }
+      }
+
+      .edit__questions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background-color: rgba(141, 141, 141, 0.14);
+        border-radius: 1rem;
+      }
+
+      svg.new {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    #submit {
+      width: 10rem;
+      height: 2rem;
+
+      margin: 1rem;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

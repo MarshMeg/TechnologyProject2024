@@ -1,0 +1,46 @@
+version: '3.9'
+services:
+  db:
+    image: mysql
+    container_name: db
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    env_file: .env
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+    volumes:
+      - ./db_files:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  backend:
+    build:
+      dockerfile: Dockerfile
+      context: backend
+    command: >
+      bash -c "python manage.py runserver 0.0.0.0:8000"
+    restart: always
+    env_file: .env
+    depends_on:
+      - db
+
+  frontend:
+    build: frontend
+    command: npm run dev
+    restart: always
+    depends_on:
+      - backend
+
+  nginx:
+    image: nginx
+    restart: always
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - ./logs/nginx:/var/log/nginx
+    depends_on:
+      - backend
+      - frontend
+    ports:
+      - "80:80"
+      - "443:443"

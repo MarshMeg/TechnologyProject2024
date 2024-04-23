@@ -1,0 +1,10 @@
+.account__box {
+    display: flex;
+
+    a {
+        padding: 0 5px;
+        height: 24px;
+        text-align: center;
+        margin: auto;
+    }
+}

@@ -1,0 +1,49 @@
+.edit__question {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 90%;
+
+  background-color: rgba(141, 141, 141, 0.14);
+  border-radius: 1rem;
+  margin: 0.5rem 0;
+
+  label {
+    width: 100%;
+    margin-bottom: 0.5rem;
+
+    input {
+      width: calc(100% - 150px);
+    }
+  }
+
+  .questionTextArea {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.25rem 0.5rem;
+    width: calc(100% - 1rem);
+
+    label {
+      width: 100%;
+      margin: 0;
+
+      input {
+        width: calc(100% - 67px);
+      }
+    }
+
+    svg {
+      width: 2rem;
+    }
+  }
+
+  .edit__answers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+  }
+}

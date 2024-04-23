@@ -1,0 +1,32 @@
+@keyframes hover_to_test {
+  0% { scale: 1; }
+  100% { scale: 1.05; }
+}
+
+#test_page {
+  div.test a {
+    animation: none;
+  }
+
+  div.actions {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a {
+      min-width: 8.5rem;
+      min-height: 2rem;
+      padding: 0.5rem;
+      margin: 1rem;
+      border-radius: 1rem;
+      color: black;
+      background-color: rgba(255, 255, 255, 0.06);
+      
+      @media (prefers-color-scheme: dark) {
+        color: #f9f9f9;
+      }
+    }
+  }
+}
