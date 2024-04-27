@@ -1,4 +1,5 @@
-.venv
-logs
-.idea
-db_files
+.venv/
+logs/
+.idea/
+db_files/
+docker_status.json
