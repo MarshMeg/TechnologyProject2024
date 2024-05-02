@@ -10,7 +10,7 @@ services:
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
       MYSQL_DATABASE: ${DB_NAME}
     volumes:
-      - ./db_files:/var/lib/mysql
+      - ../web_app-db_files:/var/lib/mysql
     ports:
       - "3306:3306"
 
@@ -19,7 +19,7 @@ services:
       dockerfile: Dockerfile
       context: backend
     command: >
-      bash -c "python manage.py runserver 0.0.0.0:8000"
+      bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     restart: always
     env_file: .env
     depends_on:

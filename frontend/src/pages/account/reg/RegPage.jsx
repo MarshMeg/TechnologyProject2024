@@ -27,7 +27,7 @@ export default function RegPage() {
 			alert("Пароль слишком распространён")
 			alert_ = true
 		}
-		if (parseInt(password) == NaN) {
+		if (/^\d+$/.test(password)) {
 			alert("Пароль состоит только из цифр")
 			alert_ = true
 		}
