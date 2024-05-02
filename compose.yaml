@@ -38,6 +38,7 @@ services:
     volumes:
       - ./nginx:/etc/nginx/conf.d
       - ./logs/nginx:/var/log/nginx
+      - ./ssl:/etc/ssl/dimasik.sytes.net
     depends_on:
       - backend
       - frontend
