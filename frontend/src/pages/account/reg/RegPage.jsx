@@ -2,7 +2,6 @@ import { useState } from "react";
 import AccountAPI from "../../../api/AccountAPI.ts";
 import { passwords } from "./2048-most-common.js";
 import './reg.css'
-import * as test from "node:test";
 
 export default function RegPage() {
 	const [username, setUsername] = useState('')

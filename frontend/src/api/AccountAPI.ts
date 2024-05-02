@@ -7,19 +7,12 @@ export default class AccountAPI extends API {
     this.url = this.url + "auth/"
   }
 
-  status() {
+  status(): number {
     return this.request("", "POST")
   }
 
-  login(login: string, password: string) {
-    let params: {[key: string]: any}
-    if ("@" in Array(login)) {
-      params = {"email": login, "password": password}
-    } else {
-      params = {"username": login, "password": password}
-    }
-
-    return this.request("login/", "POST", params)
+  login(login: string, password: string): number {
+    return this.request("login/", "POST", {"username": login, "password": password})
   }
 
   logout() {

@@ -39,9 +39,9 @@ export default class API {
     let req = new XMLHttpRequest()
 
     req.open(method, `${this.url}${url}${((method == 'POST') ? '': this.params(params))}`, false)
-    req.setRequestHeader('X-CSRFToken', localStorage.getItem('csrftoken'))
 
     if (method == 'POST') {
+      req.setRequestHeader('X-CSRFToken', localStorage.getItem('csrftoken'))
       req.setRequestHeader("Content-Type", "application/json")
       req.send(JSON.stringify(params))
     } else {
