@@ -13,8 +13,8 @@ urlpatterns = [
 
     path('data/get_tests/', get_tests_list, name='tests_list'),
     path('data/get_test_data/<int:test_id>/', get_test_data_by_id, name='test_data'),
-    path('data/post_answers', post_answers, name='post_answers'),
-    path('data/check_answers', check_answers, name='check_answers'),
+    path('data/post_answers/', post_answers, name='post_answers'),
+    path('data/check_answers/', check_answers, name='check_answers'),
 
     path('data/get_my_tests/', get_my_tests, name='my_tests'),
     path('data/get_my_test_data/', get_my_test_data, name='my_test_data'),
