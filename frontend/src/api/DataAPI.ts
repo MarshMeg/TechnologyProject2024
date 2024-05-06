@@ -32,8 +32,8 @@ export default class DataAPI extends API
     this.request("post_answers/", "POST", params)
   }
 
-  check_answers(): Array<object> {
-    return this.request("check_answers/", "GET")["true_answers"]
+  check_answers(id: number): Array<object> {
+    return this.request("check_answers/", "GET", {"test_id": id})["true_answers"]
   }
 
   get_my_test_data(testID: number): { [key: string]: any } {

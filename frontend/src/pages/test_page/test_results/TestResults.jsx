@@ -3,7 +3,7 @@ import "./test_results.css";
 
 export default function TestResults()
 {
-	const true_answers = new DataAPI().check_answers()
+	const true_answers = new DataAPI().check_answers(new URLSearchParams(location.search).get("test_id"))
 
 	return (
 		<>
