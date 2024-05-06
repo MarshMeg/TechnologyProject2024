@@ -181,7 +181,7 @@ def check_answers(request: WSGIRequest or HttpRequest):
         return JsonResponse({}, status=401)
 
     re_ = {"true_answers": []}
-    user_answers = UserAnswer.objects.filter(user_id=request.user.id)
+    user_answers = UserAnswer.objects.filter(user_id=request.user.id, test_id=request.GET['test_id'])
     quests = Question.objects.filter(test_id=user_answers[0].test_id)
 
     answers = [{

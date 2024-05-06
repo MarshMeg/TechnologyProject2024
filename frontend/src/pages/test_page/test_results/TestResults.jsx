@@ -20,7 +20,7 @@ export default function TestResults()
 					true_answers.map((answer, index) => (
 						<tr>
 							<th>{ index }</th>
-							<th>{ answer }</th>
+							<th>{ ((answer == true)?'Правильно': 'Не правильно') }</th>
 						</tr>
 					))
 				}

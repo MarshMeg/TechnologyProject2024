@@ -37,7 +37,7 @@ export default function TestGo() {
 					new DataAPI().post_answers(`${questionID}_${answer}`, test.id)
 					setAnswer("")
 				} }>
-					<Link to={"/test/results" } replace>Сохранить</Link>
+					<Link to={ `/test/results?test_id=${test.id}` } replace>Сохранить</Link>
 				</button>
 			)
 		}
