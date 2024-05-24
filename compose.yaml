@@ -1,27 +1,23 @@
 version: '3.9'
 services:
   db:
-    image: mysql
+    image: mariadb
     container_name: db
     restart: always
     command: --default-authentication-plugin=mysql_native_password
-    env_file: .env
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
       MYSQL_DATABASE: ${DB_NAME}
     volumes:
       - ${DB_FILES_PATH}:/var/lib/mysql
-    ports:
-      - "3306:3306"
 
   backend:
     build:
       dockerfile: Dockerfile
       context: backend
     command: >
-      bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+      bash -c "python manage.py makemigrations && python manage.py runserver 0.0.0.0:8000"
     restart: always
-    env_file: .env
     depends_on:
       - db
 
@@ -34,7 +30,7 @@ services:
       - backend
 
   nginx:
-    image: nginx
+    image: nginx:alpine
     restart: always
     volumes:
       - ./nginx:/etc/nginx/conf.d
