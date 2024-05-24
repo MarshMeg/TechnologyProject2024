@@ -7,6 +7,9 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - run: cd frontend
-      - run: npm i
-      - run: npm run build --if-present
+      - name: install dependencies
+        working-directory: ./frontend
+        run: npm i
+      - name: build
+        working-directory: ./frontend
+        run: npm run build
